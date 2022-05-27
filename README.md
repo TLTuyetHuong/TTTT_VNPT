@@ -1,5 +1,5 @@
 # BÁO CÁO
-_Họ tên: Trần Lê Tuyết Hương
+_Họ tên: Trần Lê Tuyết Hương_
 
 ### Câu 1: Angular là gì? Lợi ích của Angular so với javascript thuần
 - Angular là một nền tảng hay JavaScript Framework được phát triển để xây dựng các Single Page Application (SPA) sử dụng HTML, JavaScript và TypeScript … Nó triển khai chức năng cốt lõi và các chức năng tùy chọn như một tập hợp các thư viện TypeScript mà bạn import vào các ứng dụng của mình.
