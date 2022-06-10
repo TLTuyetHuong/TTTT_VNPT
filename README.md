@@ -96,7 +96,7 @@ Lớp Danh mục chứng chỉ dùng để lưu thông tin danh mục chứng ch
 |3|	NoiDung|	Varchar|	Nội dung thông tin về chứng chỉ|
 |4|	ThoiGianHieuLuc|	Integer|	Thời gian hiệu lực của từng chứng chỉ|
 
-**3. TRẠNG THÁI CHỨNG CHỈ** 🌱
+**3. TRẠNG THÁI DANH MỤC CHỨNG CHỈ** 🌱
 
 Lớp Trạng thái chứng chỉ dùng để lưu thông tin trạng thái của chứng chỉ trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
@@ -119,8 +119,9 @@ Lớp Nhân viên dùng để lưu thông tin nhân viên trong quản lý đào
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
 |:---|:-----------|:------------|:---------|
 |1|	Ma|	Varchar|	Mỗi nhân viên có một mã riêng biệt để phân biệt|
-|2|	Ten|	Charchar|	Tên của nhân viên|
+|2|	Ten|	Varchar|	Tên của nhân viên|
 |3|	NgaySinh|	Date|	Ngày sinh của nhân viên|
+|4|	GioiTinh|	Varchar|	Giới tính của nhân viên|
 
 **6. CHỨC DANH** 🌱
 
@@ -153,6 +154,7 @@ Lớp đối tượng dùng để lưu thông tin các đối tượng có trong
 |:---|:-----------|:------------|:---------|
 |1|	Ma|	Varchar|	Mỗi đối tượng có một mã riêng biệt để phân biệt|
 |2|	Ten|	Varchar|	Tên của đối tượng|
+|3|	MoTa|	Varchar|	Mô tả đối tượng|
 
 **10. CHƯƠNG TRÌNH ĐÀO TẠO** 🌱
 
@@ -165,16 +167,11 @@ Lớp Chương trình đào tạo dùng để lưu thông tin các chương trì
 |4|	NgayKetThuc|	Date|	Ngày kết thúc chương trình đào tạo|
 |5|	DiaDiem|	Varchar|	Nơi diễn ra khóa đào tạo|
 |6|	NoiDung|	Varchar	|Nội dung chương trình đào tạo|
+|7|	TrangThai|	Varchar	|Trạng thái chương trình đào tạo|
+|8|	SoBuoiHoc|	Int	|Số buổi học chương trình đào tạo|
+|9|	DaDuyet|	Varchar	|Đã duyệt chương trình đào tạo hay chưa|
 
-**11. TRẠNG THÁI ĐÀO TẠO** 🌱
-
-Lớp Trạng thái đào tạo dùng để lưu thông tin trạng thái của chương trình đào tạo trong quản lý đào tạo.
-|**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
-|:---|:-----------|:------------|:---------|
-|1|	Ma|	Varchar|	Mỗi trạng thái đào tạo có một mã riêng biệt để phân biệt|
-|2|	TrangThai|	Varchar|	Trạng thái của chương trình đào tạo|
-
-**12. LỊCH ĐÀO TẠO** 🌱
+**11. LỊCH ĐÀO TẠO** 🌱
 
 Lớp Lịch đào tạo dùng để  lưu thông tin về lịch đào tạo của chương trình đào tạo trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
@@ -185,7 +182,7 @@ Lớp Lịch đào tạo dùng để  lưu thông tin về lịch đào tạo c�
 |4|	NoiDungDaoTao	|Varchar|	Nội dung thông tin cần đào tạo|
 |5|	TenLichDaoTao	|Varchar	|Tên lịch đào tạo|
 
-**13. HỌC VIÊN** 🌱
+**12. HỌC VIÊN** 🌱
 
 Lớp Học viên dùng để lưu thông tin học viên trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
@@ -193,39 +190,26 @@ Lớp Học viên dùng để lưu thông tin học viên trong quản lý đào
 |1|	Ma|	Varchar|	Mỗi học viên có một mã riêng biệt để phân biệt|
 |2|	Ten|	Varchar	|Tên của học viên|
 
-**14. ĐIỂM** 🌱
+**13. PHIẾU ĐÁNH GIÁ** 🌱
 
-Lớp Điểm dùng để lưu thông tin về điểm của từng học viên trong quản lý đào tạo.
+Lớp Phiếu đánh giá dùng để lưu thông tin về điểm và đánh giá của từng học viên trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
 |:---|:-----------|:------------|:---------|
-|1|	Diem|	Float|	Mỗi lịch đào tạo có một mã riêng biệt để phân biệt|
-|2|	DanhGiaHocVien|	Varchar|	Thời gian bắt đầu của lịch đào tạo|
-|3|	DanhGiaKhoaDaoTao|	Varchar|	Thời gian kết thúc của lịch đào tạo|
+|1|	Ma|	Varcha|	Mỗi lịch đào tạo có một mã riêng biệt để phân biệt|
+|2|	Diem|	Float|	Điểm của học viên|
+|3|	DanhGiaHocVien|	Varchar|	Đánh giá kết quả của học viên|
+|4|	DanhGiaKhoaDaoTao|	Varchar|	Đánh giá về khóa đào tạo|
+|5|	SoBuoiThamDu|	Int|	Số buổi tham dự của học viên|
 
-**15. ĐIỂM DANH** 🌱
+**14. PHIẾU THANH TOÁN HỌC PHÍ** 🌱
 
-Lớp Điểm danh dùng để lưu thông tin điểm danh học viên trong quản lý đào tạo.
-|**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
-|:---|:-----------|:------------|:---------|
-|1|	NgayDiemDanh|	Date|	Ngày điểm danh|
-
-**16. LOẠI THANH TOÁN** 🌱
-
-Lớp Loại thanh toán dùng đề lưu thông tin về loại thanh toán trong quản lý đào tạo.
-|**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
-|:---|:-----------|:------------|:---------|
-|1|	Ma|	Varchar|	Mỗi loại thanh toán có một mã riêng biệt để phân biệt|
-|2|	NoiDung	|Varchar|	Nội dung thanh toán|
-|3|	MucPhi|	Float|	Mức phí thanh toán|
-
-**17. THANH TOÁN HỌC PHÍ** 🌱
-
-Lớp Thanh toán học phí dùng để lưu thông tin về ngày thanh toán trong quản lý đào tạo.
+Lớp Phiếu thanh toán học phí dùng đề lưu thông tin về  thanh toán học phí trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
 |:---|:-----------|:------------|:---------|
 |1|	NgayThanhToan|	Date|	Ngày thanh toán|
+|2|	MucPhi|	Float|	Mức phí thanh toán|
 
-**18. DỰ TOÁN** 🌱
+**15. DỰ TOÁN** 🌱
 
 Lớp dự toán dùng để lưu thông tin về các dự toán trong quản lý đào tạo.
 |**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
@@ -237,32 +221,42 @@ Lớp dự toán dùng để lưu thông tin về các dự toán trong quản l
 |5|	SoLopDaoTao|	Integer	|Số lớp đào tạo|
 |6|	SoLuongHocVien|	Integer|	Số lượng học viên|
 
-### Câu 8: Sơ đồ Sequence 💭
-1. Tìm kiếm tổ chức
+**16. GIẢNG VIÊN** 🌱
+
+Lớp Giảng viên dùng để lưu thông tin giảng viên trong quản lý đào tạo.
+|**STT**|	**Thuộc tính**|	**Kiểu dữ liệu**|	**Ý nghĩa**|
+|:---|:-----------|:------------|:---------|
+|1|	Ma|	Varchar|	Mỗi giảng viên có một mã riêng biệt để phân biệt|
+|2|	Ten|	Varchar|	Tên của giảng viên|
+|3|	NgaySinh|	Date|	Ngày sinh của giảng viên|
+|4|	GioiTinh|	Varchar|	Giới tính của giảng viên|
+
+### 🌼Câu 8: Sơ đồ Sequence 💭
+1. Tìm kiếm tổ chức 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_TimKiemToChuc.png)
 
-2. Xóa danh mục tổ chức
+2. Xóa danh mục tổ chức 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_XoaDMTC.png)
 
-3. Sửa danh mục tổ chức
+3. Sửa danh mục tổ chức 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_SuaDMTC.png)
 
-4. In chứng chỉ
+4. In chứng chỉ 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_InChungChi.png)
 
-5. Khóa chứng chỉ
+5. Khóa chứng chỉ 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_KhoaChungChi.png)
 
-6. Điểm danh
+6. Điểm danh 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_DiemDanh.png)
 
-7. Thêm chương trình đào tạo
+7. Thêm chương trình đào tạo 🍄
 
 ![alt](https://huongb1809130.000webhostapp.com/LTWeb/Image_QLDT/SoDoTT_ThemCTDT.png)
 
